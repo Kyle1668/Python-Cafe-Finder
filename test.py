@@ -1,4 +1,4 @@
-import requests
+import urllib.request
 import json
 
 
@@ -8,8 +8,8 @@ def return_get(location_name):
 
 
 def places_api_request(request_url):
-    data = urllib.request.urlopen(request_url).reads()
-    return json.load(data)
+    # data = urllib.request.urlopen(request_url).reads()
+    return json.load(request_url)
 
 
 def main():
