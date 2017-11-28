@@ -14,16 +14,15 @@ def places_api_request(request_url):
     return json.loads(data.decode(encoding))
 
 
-def display_cafes():
-
+def display_cafes(json_data):
+    for cafe in json_data["results"]:
+        print(cafe["name"] + ": " + cafe["formatted_address"])
 
 
 def main():
     location_name = input("Enter Location Name: ")
     request_url = return_get(location_name)
     json_data = places_api_request(request_url)
-
-    for cafe in json_data["results"]:
-        print(cafe["name"])
+    display_cafes(json_data)
 
 main()
