@@ -20,8 +20,10 @@ def display_cafes(json_data):
 
 
 def main():
-    location_name = input("Enter Location Name (Include State for Great Accuracy): ")
-    request_url = return_get(location_name)
+    location_name = input("Enter Location Name: ")
+    region_name = input("Enter Region Name: ")
+
+    request_url = return_get(location_name + "+" + region_name)
     json_data = places_api_request(request_url)
     display_cafes(json_data)
 
