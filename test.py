@@ -8,8 +8,14 @@ def return_get(location_name):
 
 
 def places_api_request(request_url):
-    # data = urllib.request.urlopen(request_url).reads()
-    return json.load(request_url)
+    web_data = urllib.request.urlopen(request_url)
+    data = web_data.read()
+    encoding = web_data.info().get_content_charset('utf-8')
+    return json.loads(data.decode(encoding))
+
+
+def display_cafes():
+
 
 
 def main():
@@ -18,6 +24,6 @@ def main():
     json_data = places_api_request(request_url)
 
     for cafe in json_data["results"]:
-        print(cafe["formatted_address"])
+        print(cafe["name"])
 
 main()
