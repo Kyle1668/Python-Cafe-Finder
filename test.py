@@ -25,4 +25,5 @@ def main():
     json_data = places_api_request(request_url)
     display_cafes(json_data)
 
+
 main()
