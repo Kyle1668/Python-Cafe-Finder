@@ -11,8 +11,9 @@ def get_search():
 
 
 def return_get(location_name):
+    key = "YOUR-API-KEY"
     return "https://maps.googleapis.com/maps/api/place/textsearch/json?query=Cafe+coffee+near+" \
-          + location_name.replace(" ", "+") + "&key=AIzaSyC_KZyErDtZ42CuFscO2l5YseWaV8MCHrQ&sensor=false"
+           + location_name.replace(" ", "+") + "&key=" + key
 
 
 def places_api_request(request_url):

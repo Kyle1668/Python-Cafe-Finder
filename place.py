@@ -10,7 +10,7 @@ class Place:
         print("--------------------------------------------------------------------")
         print("Name: " + self.name)
         # print("Google Reviews Rating: " + str(self.rating))
-        # print("Address: " + self.address)
+        print("Address: " + self.address)
         # print("Is Currently Open For Business: " + str(self.is_open))
 
 
